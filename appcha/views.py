@@ -1,7 +1,15 @@
 from django.shortcuts import render
+from .models import *
 
 def home(request):
     return render(request, 'index.html')
+
+def navbar_logo(request):
+    logo_img = Logo.objects.all()
+    context = {
+        'logo_img':logo_img,
+    }
+    return render(request,'navbar.html',context)
 
 def albums(request):
     return render(request, 'albums.html')
