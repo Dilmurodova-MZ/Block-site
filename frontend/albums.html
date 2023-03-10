@@ -29,25 +29,29 @@
             <!-- Sort -->
             <ul class="filtr-btn">
               <li data-filter="all" class="active"><h6>all</h6></li>
-              <li data-filter="1"><h6>fashion</h6></li>
-              <li data-filter="2"><h6>urban</h6></li>
+              {% for a in album %}
+                <li data-filter="1"><h6>{{ a.category }}</h6></li>
+              {% endfor %}
+              <!-- <li data-filter="2"><h6>urban</h6></li>
               <li data-filter="3"><h6>sport</h6></li>
-              <li data-filter="4"><h6>expression</h6></li>
+              <li data-filter="4"><h6>expression</h6></li> -->
             </ul>
             
             <div class="filtr-container row">
               <!-- Album item -->
+              {% for al in album %}
               <div class="album-item col-md-4 filtr-item" data-category="1">
-                <a href="gallery.html" data-type="page-transition">
+                <a href="{% url 'gallery' %}" data-type="page-transition">
                   <div class="album-item__overlay">
                     <span class="album-item__cover"></span>
-                    <h5>album title</h5>
+                    <h5>{{ al.title }}</h5>
                   </div>
-                  <div class="album-item__img" style="background-image: url(assets/images/albums/img-md.jpg)"></div>
+                  <div class="album-item__img" style='background-image: url("{{ al.img }}")'></div>
                 </a>
               </div>
+              {% endfor %}
               <!-- Album item -->
-              <div class="album-item col-md-4 filtr-item" data-category="2">
+              <!-- <div class="album-item col-md-4 filtr-item" data-category="2">
                 <a href="gallery.html" data-type="page-transition">
                   <div class="album-item__overlay">
                     <span class="album-item__cover"></span>
@@ -55,9 +59,9 @@
                   </div>
                   <div class="album-item__img" style="background-image: url(assets/images/albums/img-md.jpg)"></div>
                 </a>
-              </div>
+              </div> -->
               <!-- Album item -->
-              <div class="album-item col-md-4 filtr-item" data-category="2">
+              <!-- <div class="album-item col-md-4 filtr-item" data-category="2">
                 <a href="gallery.html" data-type="page-transition">
                   <div class="album-item__overlay">
                     <span class="album-item__cover"></span>
@@ -65,9 +69,9 @@
                   </div>
                   <div class="album-item__img" style="background-image: url(assets/images/albums/img-md.jpg)"></div>
                 </a>
-              </div>
+              </div> -->
               <!-- Album item -->
-              <div class="album-item col-md-4 filtr-item" data-category="3">
+              <!-- <div class="album-item col-md-4 filtr-item" data-category="3">
                 <a href="gallery.html" data-type="page-transition">
                   <div class="album-item__overlay">
                     <span class="album-item__cover"></span>
@@ -75,9 +79,9 @@
                   </div>
                   <div class="album-item__img" style="background-image: url(assets/images/albums/img-md.jpg)"></div>
                 </a>
-              </div>
+              </div> -->
               <!-- Album item -->
-              <div class="album-item col-md-4 filtr-item" data-category="4">
+              <!-- <div class="album-item col-md-4 filtr-item" data-category="4">
                 <a href="gallery.html" data-type="page-transition">
                   <div class="album-item__overlay">
                     <span class="album-item__cover"></span>
@@ -85,9 +89,9 @@
                   </div>
                   <div class="album-item__img" style="background-image: url(assets/images/albums/img-md.jpg)"></div>
                 </a>
-              </div>
+              </div> -->
               <!-- Album item -->
-              <div class="album-item col-md-4 filtr-item" data-category="4">
+              <!-- <div class="album-item col-md-4 filtr-item" data-category="4">
                 <a href="gallery.html" data-type="page-transition">
                   <div class="album-item__overlay">
                     <span class="album-item__cover"></span>
@@ -95,7 +99,7 @@
                   </div>
                   <div class="album-item__img" style="background-image: url(assets/images/albums/img-md.jpg)"></div>
                 </a>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>

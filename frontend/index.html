@@ -22,11 +22,11 @@
         <div class="swiper-container">
           <div class="swiper-wrapper">
             <!-- Slide -->
-            {%  for s in slayder%}
+            {% for s in slayder %}
             <div class="swiper-slide">
               <div class="slide-inner" data-swiper-parallax="45%">
                 <div class="overlay"></div>
-                <div class="slide-inner--image" style="background-image: url({{ s.image }})"></div>
+                <div class="slide-inner--image" style='background-image: url("{{ s.img_url }}" )'></div>
                 <div class="slide-inner--info">
                   <h1>{{ s.title }}</h1>
                   <a href="{% url 'gallery' %}" data-type="page-transition" class="ms-btn--slider">take a look</a>

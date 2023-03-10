@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import *
-
+  
 def home(request):
     slayder = Home_page.objects.all()
     context = {
@@ -16,7 +16,11 @@ def navbar_logo(request):
     return render(request,'navbar.html',context)
 
 def albums(request):
-    return render(request, 'albums.html')
+    album = Album.objects.all()
+    context = {
+        'album':album,
+    }
+    return render(request, 'albums.html', context)
 
 def gallery(request):
     return render(request, 'gallery.html')
