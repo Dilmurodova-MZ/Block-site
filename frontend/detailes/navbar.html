@@ -3,8 +3,8 @@
       <div class="ms-logo">
         <a href="{% url 'home' %}" data-type="page-transition">
           {% for l in logo_img %}
-            <div class="logo-dark"><img src="{{ l.logo_img.url }}" alt="logo image"></div>
-            <div class="logo-light current"><img src="{{ l.logo_img.url }}" alt="logo image"></div>
+            <div class="logo-dark"><img src="{{ l.logo_url }}" alt="logo image"></div>
+            <div class="logo-light current"><img src="{{ l.logo_url }}" alt="logo image"></div>
           {% endfor %}
         </a>
       </div>

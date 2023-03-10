@@ -22,18 +22,20 @@
         <div class="swiper-container">
           <div class="swiper-wrapper">
             <!-- Slide -->
+            {%  for s in slayder%}
             <div class="swiper-slide">
               <div class="slide-inner" data-swiper-parallax="45%">
                 <div class="overlay"></div>
-                <div class="slide-inner--image" style="background-image: url('assets/images/home-slider/img-lg.jpg')"></div>
+                <div class="slide-inner--image" style="background-image: url({{ s.image }})"></div>
                 <div class="slide-inner--info">
-                  <h1>sticking<br>treason</h1>
-                  <a href="gallery.html" data-type="page-transition" class="ms-btn--slider">take a look</a>
+                  <h1>{{ s.title }}</h1>
+                  <a href="{% url 'gallery' %}" data-type="page-transition" class="ms-btn--slider">take a look</a>
                 </div>
               </div>
             </div>
+            {% endfor %}
             <!-- Slide -->
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
               <div class="slide-inner" data-swiper-parallax="45%">
                 <div class="overlay"></div>
                 <div class="slide-inner--image" style="background-image: url('assets/images/home-slider/img-lg.jpg')">
@@ -43,9 +45,9 @@
                   <a href="gallery.html" data-type="page-transition" class="ms-btn--slider">take a look</a>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- Slide -->
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
               <div class="slide-inner" data-swiper-parallax="45%">
                 <div class="overlay"></div>
                 <div class="slide-inner--image" style="background-image: url('assets/images/home-slider/img-lg.jpg')">
@@ -55,9 +57,9 @@
                   <a href="gallery.html" data-type="page-transition" class="ms-btn--slider">take a look</a>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- Slide -->
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
               <div class="slide-inner" data-swiper-parallax="45%">
                 <div class="overlay"></div>
                 <div class="slide-inner--image" style="background-image: url('assets/images/home-slider/img-lg.jpg')">
@@ -67,7 +69,7 @@
                   <a href="gallery.html" data-type="page-transition" class="ms-btn--slider">take a look</a>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
           <div class="swiper-nav-btn">
             <div class="swiper-button-prev swiper-button-white">prev</div>
