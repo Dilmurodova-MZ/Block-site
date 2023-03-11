@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import *
   
 def home(request):
@@ -25,8 +25,24 @@ def albums(request):
 def gallery(request):
     return render(request, 'gallery.html')
 
+
 def blog(request):
-    return render(request, 'blog.html')
+    blog = Blog.objects.all()
+    context = {
+        'blog':blog,
+    }
+    return render(request, 'blog.html', context)
+
+def Blog_pages(request, post_id):
+    blog = get_object_or_404(Blog, pk=post_id)
+    blog_title = Blog.objects.all()
+    context = {
+        'blog':blog,
+        'blog_title':blog_title,
+    }
+    return render(request, 'blog-single-page.html', context)
+    
+
 
 def about(request):
     return render(request, 'about.html')

@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Logo(models.Model):
     logo_img = models.ImageField(upload_to='logo/')
@@ -34,3 +35,18 @@ class Album(models.Model):
     class Meta:
         verbose_name = "Albom"
         verbose_name_plural = "Albomlar"
+        
+    
+class Blog(models.Model):
+    title = models.CharField(max_length=150)
+    short_title = models.TextField()
+    content = models.TextField()
+    date  = models.DateField()
+    img_url = models.TextField()
+    
+    class Meta:
+        verbose_name = "Blog"
+        verbose_name_plural = "Bloglar"
+        
+    def get_absolute_url(self):
+        return reverse("blog", kwargs={"post_id": self.pk})

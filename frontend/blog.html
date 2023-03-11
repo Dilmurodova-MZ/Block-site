@@ -27,20 +27,22 @@
         <div class="ms-section__block">
           <div id="blog" class="row">
             <!-- Post Item -->
+            {% for b in blog %}
             <div class="post-item col-lg-6 col-md-12">
-              <a href="blog-single-page.html" data-type="page-transition">
+              <a href="{{ b.get_absolute_url }}" data-type="page-transition">
                 <div class="post-item__img">
-                  <img src="assets/images/albums/img-md.jpg" alt="img">
+                  <img src="{{ b.img_url }}" alt="img">
                 </div>
                 <div class="post-item__info">
-                  <h5 class="post-item__title">post title</h5>
-                  <div class="post-item__date">11/11/2017</div>
+                  <h5 class="post-item__title">{{ b.title }}</h5>
+                  <div class="post-item__date">{{ b.date }}</div>
                   <div class="post-item__link">read more</div>
                 </div>
               </a>
             </div>
+            {% endfor %}
             <!-- Post Item -->
-            <div class="post-item col-lg-6 col-md-12">
+            <!-- <div class="post-item col-lg-6 col-md-12">
               <a href="blog-single-page.html" data-type="page-transition">
                 <div class="post-item__img">
                   <img src="assets/images/albums/img-md.jpg" alt="img">
@@ -51,9 +53,9 @@
                   <div class="post-item__link">read more</div>
                 </div>
               </a>
-            </div>
+            </div> -->
             <!-- Post Item -->
-            <div class="post-item col-lg-6 col-md-12">
+            <!-- <div class="post-item col-lg-6 col-md-12">
               <a href="blog-single-page.html" data-type="page-transition">
                 <div class="post-item__img">
                   <img src="assets/images/albums/img-md.jpg" alt="img">
@@ -64,9 +66,9 @@
                   <div class="post-item__link">read more</div>
                 </div>
               </a>
-            </div>
+            </div> -->
             <!-- Post Item -->
-            <div class="post-item col-lg-6 col-md-12">
+            <!-- <div class="post-item col-lg-6 col-md-12">
               <a href="blog-single-page.html" data-type="page-transition">
                 <div class="post-item__img">
                   <img src="assets/images/albums/img-md.jpg" alt="img">
@@ -77,7 +79,7 @@
                   <div class="post-item__link">read more</div>
                 </div>
               </a>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="ms-section__block center-block">

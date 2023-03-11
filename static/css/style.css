@@ -97,6 +97,7 @@ ol,
 ul {
     padding: 0 !important;
 }
+
 button {
     background: transparent;
     border: none;
@@ -353,7 +354,7 @@ p {
     transition-property: opacity, filter, -webkit-filter;
 }
 .navbar-white .hamburger-label {
-    color: #fff;
+    color:rgb(153, 153, 153);
 }
 .hamburger-label {
     display: block;
@@ -371,7 +372,7 @@ p {
     color: #151515;
 }
 .hamburger.is-active .hamburger-label {
-    color: #fff !important;
+    color: rgb(153, 153, 153) !important;
     transition: color .1s ease;
 }
 .hamburger-box {
@@ -388,7 +389,7 @@ p {
 .navbar-white .hamburger-inner,
 .navbar-white .hamburger-inner:after,
 .navbar-white .hamburger-inner:before {
-    background-color: #fff;
+    background-color: rgb(153, 153, 153);
 }
 .hamburger-inner:after,
 .hamburger-inner:before {
@@ -414,7 +415,7 @@ p {
 }
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner:after {
-    background-color: #fff;
+    background-color: rgb(153, 153, 153);
     transition-delay: .1s;
 }
 .hamburger.is-active .hamburger-inner {

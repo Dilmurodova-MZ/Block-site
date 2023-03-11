@@ -16,3 +16,7 @@ admin.site.register(Category, name)
 class name(admin.ModelAdmin):
     list_display = ['title']
 admin.site.register(Album, name)
+
+class name(admin.ModelAdmin):
+    list_display = ['title']
+admin.site.register(Blog, name)
