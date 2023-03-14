@@ -26,11 +26,13 @@
         <!-- Page Content -->
         <div class="ms-section__block">
           <div id="gallery">
+            {% for i in gall %}
             <img alt="image 1"
-            src="assets/images/gallery/img-h.jpg"
-            data-image="assets/images/gallery/img-h.jpg"
+            src="{{ i.img_url }}"
+            data-image="{{ i.img_url }}"
             data-description="image placeholder">
-            <img alt="image 2"
+            {% endfor %}
+            <!-- <img alt="image 2"
             src="assets/images/gallery/img-v.jpg"
             data-image="assets/images/gallery/img-v.jpg"
             data-description="image placeholder">
@@ -41,7 +43,7 @@
             <img alt="image 4"
             src="assets/images/gallery/img-h.jpg"
             data-image="assets/images/gallery/img-h.jpg"
-            data-description="image placeholder">
+            data-description="image placeholder"> -->
           </div>
         </div>
         <div class="ms-section__block center-block">

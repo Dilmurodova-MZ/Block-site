@@ -20,3 +20,7 @@ admin.site.register(Album, name)
 class name(admin.ModelAdmin):
     list_display = ['title']
 admin.site.register(Blog, name)
+
+class name(admin.ModelAdmin):
+    list_display = ['img_url']
+admin.site.register(Gallery, name)

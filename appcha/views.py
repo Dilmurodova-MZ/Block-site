@@ -23,7 +23,11 @@ def albums(request):
     return render(request, 'albums.html', context)
 
 def gallery(request):
-    return render(request, 'gallery.html')
+    gall = Gallery.objects.all()
+    context = {
+        'gall':gall,
+    }
+    return render(request, 'gallery.html', context)
 
 
 def blog(request):

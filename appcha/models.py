@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+import uuid
 
 class Logo(models.Model):
     logo_img = models.ImageField(upload_to='logo/')
@@ -43,6 +44,7 @@ class Blog(models.Model):
     content = models.TextField()
     date  = models.DateField()
     img_url = models.TextField()
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=False)
     
     class Meta:
         verbose_name = "Blog"
@@ -50,3 +52,10 @@ class Blog(models.Model):
         
     def get_absolute_url(self):
         return reverse("blog", kwargs={"post_id": self.pk})
+    
+class Gallery(models.Model):
+    img_url = models.TextField()
+    
+    class Meta():
+        verbose_name = "Gallereya"
+        verbose_name_plural = "Gallereyalar"
