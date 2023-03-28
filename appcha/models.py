@@ -59,3 +59,17 @@ class Gallery(models.Model):
     class Meta():
         verbose_name = "Gallereya"
         verbose_name_plural = "Gallereyalar"
+        
+        
+class Users(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField(max_length=200)
+    subject = models.CharField(max_length=200)
+    message = models.TextField()
+    
+    class Meta:
+        verbose_name = "Foydalanuvchi"
+        verbose_name_plural = "Foydalanuvchilar"
+    
+    def __str__(self):
+        return self.name

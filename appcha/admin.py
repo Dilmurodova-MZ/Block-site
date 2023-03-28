@@ -24,3 +24,7 @@ admin.site.register(Blog, name)
 class name(admin.ModelAdmin):
     list_display = ['img_url']
 admin.site.register(Gallery, name)
+
+class name(admin.ModelAdmin):
+    list_display = ['name']
+admin.site.register(Users, name)

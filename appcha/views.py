@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import *
+from .forms import *
   
 def home(request):
     slayder = Home_page.objects.all()
@@ -53,3 +54,16 @@ def about(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+def Send(request):
+    user = UserForm(request.POST)
+    if request.method == "POST":
+        if user.is_valid():
+            user.save()
+            return redirect('home')
+    else:
+        user = UserForm()
+    context = {
+        'user':user
+    }
+    return render(request, 'contact.html', context)
